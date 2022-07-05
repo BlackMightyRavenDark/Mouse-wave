@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDownTimerInterval = new System.Windows.Forms.NumericUpDown();
             this.btnApplyTimerInterval = new System.Windows.Forms.Button();
+            this.chkFillWave = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -64,8 +65,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.panelRenderVertical);
-            this.splitContainer1.Size = new System.Drawing.Size(785, 405);
-            this.splitContainer1.SplitterDistance = 352;
+            this.splitContainer1.Size = new System.Drawing.Size(369, 216);
+            this.splitContainer1.SplitterDistance = 165;
             this.splitContainer1.TabIndex = 2;
             // 
             // label2
@@ -85,7 +86,7 @@
             this.panelRenderHorizontal.BackColor = System.Drawing.Color.RoyalBlue;
             this.panelRenderHorizontal.Location = new System.Drawing.Point(3, 22);
             this.panelRenderHorizontal.Name = "panelRenderHorizontal";
-            this.panelRenderHorizontal.Size = new System.Drawing.Size(350, 380);
+            this.panelRenderHorizontal.Size = new System.Drawing.Size(163, 191);
             this.panelRenderHorizontal.TabIndex = 0;
             this.panelRenderHorizontal.TabStop = false;
             this.panelRenderHorizontal.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRenderHorizontal_Paint);
@@ -108,7 +109,7 @@
             this.panelRenderVertical.BackColor = System.Drawing.Color.RoyalBlue;
             this.panelRenderVertical.Location = new System.Drawing.Point(3, 22);
             this.panelRenderVertical.Name = "panelRenderVertical";
-            this.panelRenderVertical.Size = new System.Drawing.Size(417, 380);
+            this.panelRenderVertical.Size = new System.Drawing.Size(188, 191);
             this.panelRenderVertical.TabIndex = 0;
             this.panelRenderVertical.TabStop = false;
             this.panelRenderVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRenderVertical_Paint);
@@ -124,7 +125,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 423);
+            this.label1.Location = new System.Drawing.Point(12, 234);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 13);
             this.label1.TabIndex = 3;
@@ -133,7 +134,7 @@
             // numericUpDownTimerInterval
             // 
             this.numericUpDownTimerInterval.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.numericUpDownTimerInterval.Location = new System.Drawing.Point(140, 420);
+            this.numericUpDownTimerInterval.Location = new System.Drawing.Point(140, 231);
             this.numericUpDownTimerInterval.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -156,7 +157,7 @@
             // btnApplyTimerInterval
             // 
             this.btnApplyTimerInterval.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnApplyTimerInterval.Location = new System.Drawing.Point(199, 418);
+            this.btnApplyTimerInterval.Location = new System.Drawing.Point(199, 229);
             this.btnApplyTimerInterval.Name = "btnApplyTimerInterval";
             this.btnApplyTimerInterval.Size = new System.Drawing.Size(75, 23);
             this.btnApplyTimerInterval.TabIndex = 5;
@@ -164,16 +165,29 @@
             this.btnApplyTimerInterval.UseVisualStyleBackColor = true;
             this.btnApplyTimerInterval.Click += new System.EventHandler(this.btnApplyTimerInterval_Click);
             // 
+            // chkFillWave
+            // 
+            this.chkFillWave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkFillWave.AutoSize = true;
+            this.chkFillWave.Location = new System.Drawing.Point(294, 232);
+            this.chkFillWave.Name = "chkFillWave";
+            this.chkFillWave.Size = new System.Drawing.Size(87, 17);
+            this.chkFillWave.TabIndex = 6;
+            this.chkFillWave.Text = "Заполнение";
+            this.chkFillWave.UseVisualStyleBackColor = true;
+            this.chkFillWave.CheckedChanged += new System.EventHandler(this.chkFillWave_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(384, 261);
+            this.Controls.Add(this.chkFillWave);
             this.Controls.Add(this.btnApplyTimerInterval);
             this.Controls.Add(this.numericUpDownTimerInterval);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.splitContainer1);
-            this.MinimumSize = new System.Drawing.Size(300, 300);
+            this.MinimumSize = new System.Drawing.Size(400, 300);
             this.Name = "Form1";
             this.Text = "Mouse wave";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -201,6 +215,7 @@
         private System.Windows.Forms.Button btnApplyTimerInterval;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox chkFillWave;
     }
 }
 

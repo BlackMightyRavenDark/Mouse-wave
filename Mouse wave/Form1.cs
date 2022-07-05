@@ -107,7 +107,23 @@ namespace Mouse_wave
                         }
 
                         buffer.Clear(panelRenderHorizontal.BackColor);
-                        buffer.DrawCurve(Pens.Black, points);
+
+                        if (chkFillWave.Checked)
+                        {
+                            for (int i = 0; i < horizontalWave.Length; ++i)
+                            {
+                                if (points[i].X > 0)
+                                {
+                                    buffer.DrawLine(Pens.Gray, 0, i, points[i].X, i);
+                                }
+                            }
+                            buffer.DrawCurve(Pens.White, points);
+                        }
+                        else
+                        {
+                            buffer.DrawCurve(Pens.Black, points);
+                        }
+                     
                         e.Graphics.DrawImage(bitmap, 0, 0);
                     }
                 }
@@ -135,7 +151,23 @@ namespace Mouse_wave
                         }
 
                         buffer.Clear(panelRenderVertical.BackColor);
-                        buffer.DrawCurve(Pens.Black, points);
+
+                        if (chkFillWave.Checked)
+                        {
+                            for (int i = 0; i < verticalWave.Length; ++i)
+                            {
+                                if (points[i].Y < screenHeight)
+                                {
+                                    buffer.DrawLine(Pens.Gray, i, panelRenderVertical.Height, i, points[i].Y);
+                                }
+                            }
+                            buffer.DrawCurve(Pens.White, points);
+                        }
+                        else
+                        {
+                            buffer.DrawCurve(Pens.Black, points);
+                        }
+
                         e.Graphics.DrawImage(bitmap, 0, 0);
                     }
                 }
@@ -160,6 +192,12 @@ namespace Mouse_wave
             }
 
             timer1.Interval = (int)numericUpDownTimerInterval.Value;
+        }
+
+        private void chkFillWave_CheckedChanged(object sender, EventArgs e)
+        {
+            panelRenderHorizontal.Refresh();
+            panelRenderVertical.Refresh();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
